@@ -1,9 +1,23 @@
 variable "vpc_id" {
-  default = "vpc-09d3727376e2a02e1"
+  default = "jenkins-vpc"
 }
 
-variable "subnet_ids" {
-  default = ["subnet-07f03b4f541bc23b6", "subnet-0f86876f1460cbcea", "subnet-054c5bb53a0257bba"]
+variable "vpc_cidr" {
+  default = "10.0.0.0/16"
+}
+
+variable "private_subnets" {
+  default = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+}
+
+variable "public_subnets" {
+  default = ["10.0.11.0/24", "10.0.22.0/24", "10.0.33.0/24"]
+
+}
+
+variable "azs" {
+  default = ["us-east-1a", "us-east-1b"]
+  
 }
 
 variable "cluster_version" {
